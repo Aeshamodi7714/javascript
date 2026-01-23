@@ -80,7 +80,7 @@
 //typeof
 //ex. typeof "name" -->string
 // ++
-//ex.let a =12
+//ex.let a = 12
 // a++ -->12 // post ex. a++ + a=> 25
 // ++a -->13 // pre ex. a++ + a=> 26
 // --
@@ -102,3 +102,84 @@
 //typeof --> premitive data type mate use krvo
 //instanceof --> reference data type mate use krvo
 
+
+
+
+
+
+
+
+
+
+
+let x = 10;
+let y = 20;
+
+if (x > 5 && y > 5) {
+  console.log("Both are greater than 5");
+}
+
+// Both are greater than 5
+
+
+
+let isAdmin = true;
+let isLoggedIn = false;
+
+// Access granted
+
+
+
+
+let temp = 35;
+
+if (!(temp > 30)) {
+  console.log("Hot day");
+} else {
+  console.log("Pleasant day");
+}
+
+// 
+
+
+let a = 0;
+
+// Falsy value
+
+
+let score = 78;
+
+// Grade: C
+
+let points = 120;
+
+// Status: Gold
+
+
+let loggedIn = true;
+let hasToken = false;
+
+// access: Deny
+
+
+let f = 5;
+a++;
+console.log(a);
+
+// 6
+
+
+let g = 8;
+++a;
+
+// 9
+
+
+let b = 4;
+let c = b++;
+
+// 5 4
+
+
+let i = 4;
+let j = ++j;
