@@ -8,17 +8,17 @@
 // kaya thi javanu chhe --> kaya sudhi javanu chhe --> kevi rite javanu chhe
 // for (ex.) -> 50 -> increment by 1
 // (start; end; change)
-for (let i = 1; i <= 10; i++) {
-  console.log(i);
-}
+// for (let i = 1; i <= 10; i++) {
+//   console.log(i);
+// }
 
-for (let k = 9; k >= -1; k--) {
-  console.log(k);
-}
+// for (let k = 9; k >= -1; k--) {
+//   console.log(k);
+// }
 
-for (let j = 1; j <= 10; j++) {
-  console.log("Hello");
-}
+// for (let j = 1; j <= 10; j++) {
+//   console.log("Hello");
+// }
 // for (let j = 1; j <= 10; j++) {
 //    document.writeln("Hello");
 //  }
@@ -31,11 +31,11 @@ for (let j = 1; j <= 10; j++) {
 // code
 // change
 // }
-let d = 1;
-while (d <= 10) {
-    console.log("while loop: " , d)
-    d++
-}
+// let d = 1;
+// while (d <= 10) {
+//     console.log("while loop: " , d)
+//     d++
+// }
 
 
 // make it true loops
@@ -69,8 +69,56 @@ while (d <= 10) {
 //  f--;
 // }
 
-let q = 50;
-while (q <= 60) {
- console.log(q);
- q--;
+// let q = 50;
+// while (q <= 60) {
+//  console.log(q);
+//  q--;
+// }
+
+//break
+
+for(let a= 1; a<=201; a++){
+  console.log(a);
+  if(a ===30){
+    break;
+  }
+}
+
+
+//continue 
+for (let a=1; a<=10; a++){
+  if(a===5){
+    continue;
+  }
+  console.log(a);
+}
+
+// do while loop
+// do {} while (end);
+// start
+// do{
+//   code
+//   change}
+// while(end);
+let j = 12; // start
+do {
+  console.log("do while loop:", j); // code
+  j++; // change (condition)
+} while (j < 20); // while check after executing code block (end)
+
+let z = 15; // start
+do {
+  console.log("do while loop error:", z); // code
+  z++; // change (condition)
+} while (z < 10);
+// why:
+
+//break
+
+
+for(let b= 1; b<=201; b++){
+  console.log("loop with break:", b);
+  if(b ===30){
+    break;
+  }     
 }
