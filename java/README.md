@@ -612,3 +612,549 @@ When 5 odd numbers are printed, break stops the loop.
 </p>
 </div>
 ;
+
+
+
+
+<!-- javascript function -->
+
+## Function Examples
+<hr>
+<div>
+<h1> Example 1: </h1>
+<p>What's the difference between function declaration and function expression in terms of hoisting?</p>
+<p><b>Answer:</b></p>
+<p>
+Function Declaration → Fully hoisted
+Function Expression → Not hoisted (depends on variable hoisting)
+</p>
+<p><b>Why:</b></p>
+<p>
+Function declarations are loaded into memory during the creation phase, so they can be called before they are defined.
+Function expressions depend on variable hoisting, so they cannot be used before assignment.
+</p>
+</div>
+
+
+<div>
+<h1> Example 2: </h1>
+<p>greet();</p>
+<p>function greet(){
+    console.log("Hello!");
+}</p>
+<p>Ans or Err and Why</p>
+<p><b>Answer:</b></p>
+<p>
+greet();
+
+function greet(){
+    console.log("Hello!");
+}
+</p>
+<p>Output: Hello!</p>
+<p><b>Why:</b></p>
+<p>
+This is a function declaration, and function declarations are hoisted completely, so the function can be called before its definition.
+</p>
+</div>
+
+
+
+<div>
+<h1> Example 3: </h1>
+<p>Convert normal function to Arrow Function</p>
+<p>function add(a, b){
+    return a + b;
+}</p>
+<p>Ans And How</p>
+<p><b>Answer:</b></p>
+<p>
+function add(a, b){
+    return a + b;
+}
+</p>
+<p>Answer: Arrow function version works correctly</p>
+<p><b>Why:</b></p>
+<p>
+Arrow functions are just a shorter syntax for functions and behave the same in this case.</p>
+</div>
+
+
+
+<div>
+<h1> Example 4: </h1>
+<p>Identify what is parms and what is args</p>
+<p>function welcome(name){
+    console.log("Welcome " + name);
+}</p>
+<p>welcome("user");</p>
+<p>Ans and why</p>
+<p><b>Answer:</b></p>
+<p>
+function welcome(name){
+    console.log("Welcome " + name);
+}
+welcome("user");
+</p>
+<p>Parameter: name
+Argument: "user"
+Error: No Error</p>
+<p><b>Why:</b></p>
+<p>
+Parameters are used in function definition, and arguments are values passed during function call.</p>
+</div>
+
+
+
+
+<div>
+<h1> Example 5: </h1>
+<p>how many parameters and args</p>
+<p>function temp (a, b, c){
+    console.log(a,b,c);
+}</p>
+<p>temp(1, 2)</p>
+<p> Ans, Err and Why</p>
+<p><b>Answer:</b></p>
+<p>
+function temp(a, b, c){
+    console.log(a,b,c);
+}
+temp(1, 2)
+</p>
+<p>Answer: 1 2 undefined
+Error: No Error</p>
+<p><b>Why:</b></p>
+<p>
+The third parameter has no argument, so it automatically becomes undefined.</p>
+</div>
+
+
+
+
+<div>
+<h1> Example 6: </h1>
+<p>Predict the output</p>
+<p>function temp_user(name = "Guest"){
+    console.log("Hello " + name);
+}</p>
+<p>temp_user();</p>
+<p>Ans, Err and Why</p>
+<p><b>Answer:</b></p>
+<p>
+function temp_user(name = "Guest"){
+    console.log("Hello " + name);
+}
+temp_user();
+
+</p>
+<p>Answer: Hello Guest
+Error: No Error</p>
+<p><b>Why:</b></p>
+<p>
+The default parameter value is used when no argument is passed.</p>
+</div>
+
+
+
+
+
+
+<div>
+<h1> Example 7: </h1>
+<p>what is ... operator and why use it  in function</p>
+<p>function number(...numbers){
+    console.log(numbers);
+}</p>
+<p>number(1, 2, 3, 4, 5)</p>
+<p>Ans, Err and why</p>
+<p><b>Answer:</b></p>
+<p>
+function number(...numbers){
+    console.log(numbers);
+}
+number(1, 2, 3, 4, 5)
+</p>
+<p>Answer: [1, 2, 3, 4, 5]
+Error: No Error</p>
+<p><b>Why:</b></p>
+<p>
+The rest operator gathers all arguments into a single array.</p>
+</div>
+
+
+
+
+<div>
+<h1> Example 8: </h1>
+<p>Use rest Parameters to accept any number of scores and return the total</p>
+<p>function calculateTotal(...scores){
+    let total = 0;
+    for(let i=0; i<=scores.length; i++){
+        total += scores[i];
+    }
+    return total;
+}</p>
+<p>function calculateTotal(...scores){
+    let total = 0;
+    scores.forEach(function(val){
+        total = total + val;
+    });
+    return total;
+}</p>
+<p>calculateTotal(10, 20 ,30 ,40 ,50)</p>
+<p>let sumtotal = calculateTotal(10, 20 ,30 ,40 ,50)</p>
+<p>Ans, Err and Why</p>
+<p><b>Answer: 1 function</b></p>
+<p>
+for(let i=0; i<=scores.length; i++)
+
+</p>
+<p>Answer / Error:
+Answer: NaN
+Error: Logical Error</p>
+<p><b>Why:</b></p>
+<p>
+The loop runs one extra time, accessing scores[scores.length] which is undefined. Adding undefined results in NaN.</p>
+
+<p><b>Answer: 2 function</b></p>
+<p>
+scores.forEach(function(val){
+    total = total + val;
+});
+
+</p>
+<p>Answer / Error:
+Answer: 150
+Error: No Error</p>
+<p><b>Why:</b></p>
+<p>
+forEach only loops through valid array elements, so the total is calculated correctly.</p>
+</div>
+
+
+
+
+
+<div>
+<h1> Example 9: </h1>
+<p>Fix the function using early return</p>
+<p>function checkAge(age){
+    if(age < 18){
+        console.log("Too Young");
+    } else {
+        console.log("Access Granted");
+    }
+}</p>
+<p>Ans And how</p>
+<p><b>Answer:</b></p>
+<p>
+function checkAge(age){
+    if(age < 18){
+        console.log("Too Young");
+    } else {
+        console.log("Access Granted");
+    }
+}
+</p>
+<p>Answer / Error:
+Answer: Works correctly
+Error: No Error</p>
+<p><b>Why:</b></p>
+<p>
+The logic is valid, but it can be improved using early return for cleaner code.</p>
+</div>
+
+
+
+
+<div>
+<h1> Example 10: </h1>
+<p>What is the return value of above function</p>
+<p>function f(){ return;}</p>
+<p>Ans and Why</p>
+<p><b>Answer:</b></p>
+<p>
+function f(){ 
+    return;
+}
+</p>
+<p>Answer / Error:
+Answer: undefined
+Error: No Error</p>
+<p><b>Why:</b></p>
+<p>
+A function with a return statement but no value returns undefined by default.</p>
+</div>
+
+
+
+
+
+<div>
+<h1> Example 11: </h1>
+<p>What does is mean when we say "functions are first-class citizens"?</p>
+
+<p><b>Ans:</b></p>
+<p>
+Functions are treated like normal values in JavaScript.
+</p>
+
+<p><b>Why:</b></p>
+<p>
+Functions can be stored in variables, passed as arguments,
+and returned from other functions.
+</p>
+</div>
+
+
+
+<div>
+<h1> Example 12: </h1>
+<p>Can you assign a function to a variable and then call it?</p>
+
+<p>
+let a = function(){ console.log("Hello"); }
+a();
+</p>
+
+<p><b>Ans:</b></p>
+<p>
+Output: Hello
+</p>
+
+<p><b>Why:</b></p>
+<p>
+The function is stored inside variable <b>a</b>.
+Calling <b>a()</b> executes the function.
+</p>
+</div>
+
+
+<div>
+<h1> Example 13: </h1>
+<p>Pass a function into another function and execute it.</p>
+
+<p>
+function abcd(val){ val(); }
+abcd(function(){ console.log("Hello") })
+</p>
+
+<p><b>Ans:</b></p>
+<p>
+Output: Hello
+</p>
+
+<p><b>Why:</b></p>
+<p>
+A function is passed as an argument and executed inside another function.
+</p>
+
+<p><b>How:</b></p>
+<p>
+The argument <b>val</b> holds a function, and calling <b>val()</b> runs it.
+</p>
+</div>
+
+
+<div>
+<h1> Example 14: </h1>
+<p>What is higher order function?</p>
+
+<p><b>Ans:</b></p>
+<p>
+A function that takes another function as an argument
+or returns a function.
+</p>
+
+<p><b>Why:</b></p>
+<p>
+It helps in writing reusable and flexible code.
+</p>
+</div>
+
+
+<div>
+<h1> Example 16: </h1>
+<p>pure or impure function?</p>
+
+<p>
+let total = 5;
+function num(num){
+  total += num;
+}
+num(3);
+</p>
+
+<p><b>Ans:</b></p>
+<p>
+This is an <b>Impure Function</b>.
+</p>
+
+<p><b>Why:</b></p>
+<p>
+It uses and modifies an external variable (<b>total</b>),
+so it has side effects.
+</p>
+</div>
+
+
+<div>
+<h1> Example 17: </h1>
+<p>Convert example 16 function into pure function?</p>
+
+<p><b>Ans:</b></p>
+<p>
+function num(total, num){
+  return total + num;
+}
+num(5, 3);
+</p>
+
+<p><b>Why:</b></p>
+<p>
+The function does not depend on external variables
+and always returns the same output for the same input.
+</p>
+</div>
+
+
+<div>
+<h1> Example 18: </h1>
+<p>What is Closure? When is it created?</p>
+
+<p><b>Ans:</b></p>
+<p>
+Closure is created when a function remembers variables
+from its outer scope.
+</p>
+
+<p><b>Example:</b></p>
+<p>
+function outer(){
+  let x = 10;
+  return function(){
+    console.log(x);
+  }
+}
+</p>
+</div>
+
+
+<div>
+<h1> Example 19: </h1>
+<p>What's logged?</p>
+
+<p>
+function outer(){
+    let count = 0;
+    return function(){
+        count++;
+        console.log(count);
+    };
+}
+const counter = outer();
+counter();
+counter();
+</p>
+
+<p><b>Ans:</b></p>
+<p>
+1<br>
+2
+</p>
+
+<p><b>Error:</b></p>
+<p>
+No Error
+</p>
+
+<p><b>Why:</b></p>
+<p>
+The inner function forms a closure and remembers
+the same <b>count</b> variable.
+</p>
+</div>
+
+
+<div>
+<h1> Example 20: </h1>
+<p>Convert below function into an IIFE:</p>
+
+<p><b>Ans:</b></p>
+<p>
+(function(){
+  console.log("Initialized");
+})();
+</p>
+
+<p><b>Why:</b></p>
+<p>
+IIFE runs immediately and avoids polluting the global scope.
+</p>
+</div>
+
+
+<div>
+<h1> Example 21: </h1>
+<p>What is the use of IIFE? Name one real-world use case.</p>
+
+<p><b>Ans:</b></p>
+<p>
+Used for data privacy and encapsulation.
+</p>
+
+<p><b>Why:</b></p>
+<p>
+Variables inside IIFE are private and cannot be accessed directly.
+Used in modules and counters.
+</p>
+</div>
+
+
+<div>
+<h1> Example 22: </h1>
+<p>What will be the output here and why?</p>
+
+<p>
+temp_var();
+var temp_var = function(){
+    console.log("Hello");
+}
+</p>
+
+<p><b>Ans:</b></p>
+<p>
+Error: temp_var is not a function
+</p>
+
+<p><b>Why:</b></p>
+<p>
+Function expressions are not hoisted.
+The variable exists but its value is undefined.
+</p>
+</div>
+
+
+<div>
+<h1> Example 23: </h1>
+<p>What will be the output here and why?</p>
+
+<p>
+temp_var();
+function temp_var(){
+    console.log("Hello");
+}
+</p>
+
+<p><b>Ans:</b></p>
+<p>
+Output: Hello
+</p>
+
+<p><b>Why:</b></p>
+<p>
+Function declarations are fully hoisted,
+so they can be called before definition.
+</p>
+</div>
